@@ -1,0 +1,55 @@
+{% extends './frame.html' %}
+
+{% block body %}
+<form method='POST' action='/api/search'>
+{% csrf_token %}
+<div style="width:50%; top:30%; position:absolute">
+    <div class="container">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Project</span>
+            </div>
+                <input type="text" class="form-control" placeholder="Search by Project Name" aria-label="Project" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Resource</span>
+            </div>
+                <input type="text" class="form-control" placeholder="Search by Resource (COE or SLM)" aria-label="Resource" aria-describedby="basic-addon1">
+        </div>
+        <button type="Submit" class="btn btn-primary float-right">Search</button>
+    </div>
+</div>
+</form>
+
+
+    <div class="jumbotron" style="width: 40%; left: 55%; position:absolute; ">
+        <h1 class="display-4">XProger</h1>
+        <p class="lead">Manage Your Projects like never before!</p>
+        <hr class="my-4">
+<form method='POST' action='/api/createproject'>
+{% csrf_token %}
+       <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">*Project Name</span>
+            </div>
+                <input type="text" class="form-control" placeholder="Name/Client" aria-label="Project" aria-describedby="basic-addon1">
+        </div>
+<div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">*Resource</span>
+            </div>
+                <input type="text" class="form-control" placeholder="Preferably a SLM" aria-label="Project" aria-describedby="basic-addon1">
+        </div>
+<div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Resource</span>
+            </div>
+                <input type="text" class="form-control" placeholder="Preferably a COE" aria-label="Project" aria-describedby="basic-addon1">
+        </div>
+    <button type="Submit" class="btn btn-primary float-right">Create</button>
+ </form>
+    </div>
+
+
+{% endblock %}
